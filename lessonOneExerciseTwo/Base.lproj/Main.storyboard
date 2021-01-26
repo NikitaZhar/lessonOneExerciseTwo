@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lessonOneExerciseTwo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="T2g-Ag-XIS">
-                                <rect key="frame" x="112.5" y="30" width="150" height="500"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="T2g-Ag-XIS">
+                                <rect key="frame" x="120" y="74" width="150" height="508"/>
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGY-MR-3HX">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -27,28 +27,31 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suF-tE-VCj">
-                                        <rect key="frame" x="0.0" y="179" width="150" height="142"/>
+                                        <rect key="frame" x="0.0" y="179" width="150" height="150"/>
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0E-A6-z1v">
-                                        <rect key="frame" x="0.0" y="350" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="358" width="150" height="150"/>
                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="suF-tE-VCj" firstAttribute="height" secondItem="PGY-MR-3HX" secondAttribute="height" id="EaG-X2-JGi"/>
                                     <constraint firstItem="g0E-A6-z1v" firstAttribute="height" secondItem="PGY-MR-3HX" secondAttribute="height" id="QqT-Ig-4C5"/>
-                                    <constraint firstAttribute="height" constant="500" id="s2n-KB-Jgf"/>
                                     <constraint firstAttribute="width" constant="150" id="x86-gv-0NF"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce1-7C-tBy">
-                                <rect key="frame" x="122.5" y="590" width="130" height="48"/>
+                                <rect key="frame" x="150.66666666666666" y="712" width="89" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Hog-ec-ThF"/>
-                                    <constraint firstAttribute="height" constant="48" id="Xqn-Ex-a7b"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="Hog-ec-ThF"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="Xqn-Ex-a7b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dP-cG-fhJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,10 +59,16 @@
                         <constraints>
                             <constraint firstItem="T2g-Ag-XIS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="OHp-nC-ojC"/>
                             <constraint firstItem="ce1-7C-tBy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qci-JB-1f9"/>
-                            <constraint firstItem="ce1-7C-tBy" firstAttribute="top" secondItem="T2g-Ag-XIS" secondAttribute="bottom" constant="60" id="T3W-A2-j41"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ce1-7C-tBy" secondAttribute="bottom" constant="50" id="jex-Kh-tbV"/>
                             <constraint firstItem="T2g-Ag-XIS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqf-c6-aHM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="g0E-A6-z1v" id="2lN-wi-xth"/>
+                        <outlet property="redLightView" destination="PGY-MR-3HX" id="omD-tu-QAW"/>
+                        <outlet property="startButtonLabel" destination="ce1-7C-tBy" id="NNu-jH-qeu"/>
+                        <outlet property="yellowLightView" destination="suF-tE-VCj" id="Jzj-LW-xdS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
