@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var startButtonLabel: UIButton!
     
-    var isButtonPressed = false
-    var colorToTurn = 1
-    
+    var isStartPressed = false
+    var colorToTurn = 0
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         redLightView.layer.cornerRadius = redLightView.frame.size.height / 2
@@ -26,26 +26,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startButtonPressed() {
-        if !isButtonPressed {
+        if !isStartPressed {
             startButtonLabel.setTitle("NEXT", for: .normal)
-            isButtonPressed.toggle()
+            isStartPressed.toggle()
         }
         
         switch colorToTurn {
-        case 1:
+        case 0, 3:
             redLightView.alpha = 1.0
             greenLightView.alpha = 0.3
-            colorToTurn = 2
-        case 2:
+            colorToTurn = 1
+        case 1:
             yellowLightView.alpha = 1.0
             redLightView.alpha = 0.3
-            colorToTurn = 3
-        default:
+            colorToTurn = 2
+        case 2:
             greenLightView.alpha = 1.0
             yellowLightView.alpha = 0.3
-            colorToTurn = 1
+            colorToTurn = 3
+        default:
+            print("Error!")
         }
     }
-    
 }
 
